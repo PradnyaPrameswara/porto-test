@@ -41,3 +41,9 @@ Dependencies are pinned by `pnpm-lock.yaml`; CI installs with `pnpm install --fr
 ## Typography
 
 Schibsted Grotesk Variable is self-hosted through Fontsource (OFL-1.1) so screenshots and deployments no longer depend on Google Fonts availability. Fontsource assets are bundled by Vite.
+
+## Reference visual review
+
+Run `pnpm build && pnpm exec playwright install chromium && pnpm test:reference` to capture the actual [shadcn.com](https://shadcn.com/) homepage beside the local static portfolio at 390/768/1440px. GitHub Actions uploads paired screenshots, DOM geometry, and a capture-status report as the `shadcn-reference-comparison` artifact. A remote website failure is reported explicitly and does not block the core project CI.
+
+The reference is a separate creator's website; use it to inspect layout and typography, not to copy assets, business data or proprietary code. Different text/sections mean that a raw pixel-difference percentage is not a meaningful quality metric.

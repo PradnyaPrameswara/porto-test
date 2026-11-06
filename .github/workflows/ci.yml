@@ -41,3 +41,13 @@ jobs:
           name: portfolio-visual-audit
           path: visual-audit/
           if-no-files-found: ignore
+      - name: Capture real shadcn.com comparison
+        continue-on-error: true
+        run: pnpm test:reference
+      - name: Upload reference comparison screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadcn-reference-comparison
+          path: reference-audit/
+          if-no-files-found: ignore
