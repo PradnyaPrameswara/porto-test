@@ -42,7 +42,12 @@ import { experience, expertise, projects } from "@/data/portfolio"
                 <span>0{index + 1} / {project.category}</span>
                 <span class="text-right">{project.role}</span>
               </div>
-              <h3 class="text-[16px] font-semibold tracking-[-.035em]">{project.name}</h3>
+              <h3 class="text-[16px] font-semibold tracking-[-.035em]">
+                <a class="underline decoration-transparent underline-offset-[3px] transition-colors hover:decoration-current focus-visible:decoration-current"
+                   href={`/projects/${project.slug}/`} aria-label={`Read about ${project.name}`}>
+                  {project.name} <span aria-hidden="true">↗</span>
+                </a>
+              </h3>
               <p class="mt-1 text-[13px] leading-[1.7] text-[#626262]">{project.description}</p>
               <p class="mt-2 text-[11px] leading-[1.7] text-[#868686]">{project.technologies.join(" · ")}</p>
             </article>
