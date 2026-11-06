@@ -1,16 +1,19 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { FoundationCheck } from "@/components/foundation-check"
+import SiteFooter from "@/components/site-footer.astro"
+import SiteHeader from "@/components/site-header.astro"
 ---
 
-<Layout title="porto-test · Foundation">
-  <main class="grid min-h-svh place-items-center p-6">
-    <div class="grid gap-4 text-sm">
-      <h1 class="font-semibold">Project foundation ready</h1>
-      <p class="text-muted-foreground">
-        Astro, React, TypeScript, Tailwind CSS and shadcn/ui are configured.
-      </p>
-      <FoundationCheck client:load />
-    </div>
-  </main>
+<Layout>
+  <div class="portfolio-shell">
+    <SiteHeader />
+    <main id="main-content">
+      <h1 class="sr-only">Anak Agung Gede Pradnya Prameswara — Fullstack Web Developer</h1>
+      <div class="portfolio-intro">
+        <p>I'm <strong>Pradnya Prameswara</strong>, a fullstack web developer in Gianyar, Bali. I build responsive, maintainable web applications across frontend, backend, APIs, and databases.</p>
+        <p class="portfolio-muted">I work as a Web Developer at Widhi Asih Bali Export and graduated in Informatics Education from Universitas Pendidikan Ganesha.</p>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
 </Layout>
