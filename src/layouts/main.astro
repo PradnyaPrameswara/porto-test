@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/schibsted-grotesk/wght.css"
 import "@/styles/global.css"
+import { sitePath } from "@/lib/site-paths"
 
 interface Props {
   title?: string
@@ -19,7 +20,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fefefe" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={sitePath("/favicon.svg")} />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

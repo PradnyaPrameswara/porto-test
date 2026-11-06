@@ -4,6 +4,7 @@ import Layout from "@/layouts/main.astro"
 import SiteFooter from "@/components/site-footer.astro"
 import SiteHeader from "@/components/site-header.astro"
 import { projects, type Project } from "@/data/portfolio"
+import { sitePath } from "@/lib/site-paths"
 
 export const getStaticPaths = (() =>
   projects.map((project) => ({
@@ -19,7 +20,7 @@ const { project } = Astro.props as { project: Project }
     <SiteHeader />
     <main class="mt-[48px]" id="main-content">
       <nav aria-label="Breadcrumb" class="text-[12px] text-[#777]">
-        <a href="/#work-heading" class="underline underline-offset-4 hover:text-[#222]">← all projects</a>
+        <a href={sitePath("/#work-heading")} class="underline underline-offset-4 hover:text-[#222]">← all projects</a>
       </nav>
 
       <article class="mt-10">

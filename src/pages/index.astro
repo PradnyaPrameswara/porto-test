@@ -3,6 +3,7 @@ import Layout from "@/layouts/main.astro"
 import SiteFooter from "@/components/site-footer.astro"
 import SiteHeader from "@/components/site-header.astro"
 import { experience, expertise, projects } from "@/data/portfolio"
+import { sitePath } from "@/lib/site-paths"
 ---
 
 <Layout>
@@ -52,7 +53,7 @@ import { experience, expertise, projects } from "@/data/portfolio"
           {projects.map((project) => (
             <article class="portfolio-project">
               <h3 class="text-[16px] leading-[24px]">
-                <a href={`/projects/${project.slug}/`} aria-label={`Read about ${project.name}`}>
+                <a href={sitePath(`/projects/${project.slug}/`)} aria-label={`Read about ${project.name}`}>
                   pradnya/{project.name.toLowerCase().replaceAll(" ", "-")}
                 </a>
               </h3>

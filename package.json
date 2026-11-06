@@ -18,7 +18,8 @@
     "test:site": "node --test tests/site.test.mjs",
     "test:visual": "node scripts/visual-audit.mjs",
     "test:reference": "node scripts/reference-audit.mjs",
-    "test:acceptance": "node scripts/acceptance-audit.mjs"
+    "test:acceptance": "node scripts/acceptance-audit.mjs",
+    "test:pages": "node --test tests/pages-build.test.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.0",
