@@ -36,7 +36,7 @@ Company project source is not published here. The portfolio contains no premium 
 
 Develop future changes in focused pull requests against the appropriate base. Stacked PRs must be merged in dependency order, then retargeted to `main`.
 
-The repository does not yet include a committed pnpm lockfile. Local and CI dependency resolution may therefore change across installs.
+Dependencies are pinned by `pnpm-lock.yaml`; CI installs with `pnpm install --frozen-lockfile`.
 
 ## Typography
 
