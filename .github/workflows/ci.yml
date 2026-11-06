@@ -28,3 +28,5 @@ jobs:
         run: pnpm typecheck
       - name: Build
         run: pnpm build
+      - name: Generated site smoke tests
+        run: pnpm test:site

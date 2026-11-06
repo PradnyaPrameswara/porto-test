@@ -1,34 +1,37 @@
-# porto-test
+# Pradnya Prameswara — Portfolio
 
-Personal portfolio foundation built with Astro, React, TypeScript, Tailwind CSS v4 and shadcn/ui. GSAP and Lenis are installed for later, optional animation work.
+An editorial developer portfolio inspired by the clean, monochrome layout of [shadcn.com](https://shadcn.com/), featuring original code and verified personal information.
 
-This repository is in the foundation stage; the shadcn.com-inspired visual implementation and any Arete-inspired project pages have not been started.
+Built with Astro 7, React 19 (islands when necessary), TypeScript, Tailwind CSS v4, and shadcn/ui. GSAP and Lenis are installed but deliberately not activated on this static portfolio; motion should not be added without a clear user benefit.
 
-## Local development
+## Development
 
 Requires Node.js 22.23.4+ and pnpm 12.
 
-```bash
+```sh
 pnpm install
 pnpm dev
 ```
 
-Open http://localhost:4321.
-
 ## Checks
 
-```bash
-pnpm typecheck
+```sh
 pnpm lint
+pnpm typecheck
 pnpm build
+pnpm test:site
 ```
 
-## Adding shadcn/ui components
+The smoke tests read the statically built `dist/` output, so run `pnpm build` before `pnpm test:site`.
 
-The official shadcn/ui configuration lives in `components.json`. To add a free component:
+## Content
 
-```bash
-pnpm exec shadcn add button
-```
+Verified identity, work history, projects, and technology labels are maintained in `src/data/portfolio.ts`. LinkedIn: https://www.linkedin.com/in/pradnyaprameswara/.
 
-Keep the portfolio's content and assets original. The premium Arete template is not included or licensed through this repository.
+Company project source is not published here. The portfolio contains no premium Arete source code or assets. Project case studies describe contributions without confidential code or invented performance statistics.
+
+## Repository workflow
+
+Develop future changes in focused pull requests against the appropriate base. Stacked PRs must be merged in dependency order, then retargeted to `main`.
+
+The repository does not yet include a committed pnpm lockfile. Local and CI dependency resolution may therefore change across installs.
