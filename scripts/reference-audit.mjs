@@ -45,7 +45,7 @@ async function measure(page) {
     }
     const summarize = (element) => ({
       tag: element.tagName.toLowerCase(),
-      text: (element.textContent || "").trim().replace(/\\s+/g, " ").slice(0, 120),
+      text: (element.textContent || "").trim().replace(/\s+/g, " ").slice(0, 120),
       bounds: rect(element),
       style: style(element),
     })
