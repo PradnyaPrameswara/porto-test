@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/main.astro"
+import { FoundationCheck } from "@/components/foundation-check"
+---
+
+<Layout title="porto-test · Foundation">
+  <main class="grid min-h-svh place-items-center p-6">
+    <div class="grid gap-4 text-sm">
+      <h1 class="font-semibold">Project foundation ready</h1>
+      <p class="text-muted-foreground">
+        Astro, React, TypeScript, Tailwind CSS and shadcn/ui are configured.
+      </p>
+      <FoundationCheck client:load />
+    </div>
+  </main>
+</Layout>
