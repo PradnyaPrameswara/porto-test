@@ -47,3 +47,9 @@ Schibsted Grotesk Variable is self-hosted through Fontsource (OFL-1.1) so screen
 Run `pnpm build && pnpm exec playwright install chromium && pnpm test:reference` to capture the actual [shadcn.com](https://shadcn.com/) homepage beside the local static portfolio at 390/768/1440px. GitHub Actions uploads paired screenshots, DOM geometry, and a capture-status report as the `shadcn-reference-comparison` artifact. A remote website failure is reported explicitly and does not block the core project CI.
 
 The reference is a separate creator's website; use it to inspect layout and typography, not to copy assets, business data or proprietary code. Different text/sections mean that a raw pixel-difference percentage is not a meaningful quality metric.
+
+## Acceptance and preview artifacts
+
+`pnpm test:acceptance` runs browser checks against a locally served production build. CI uploads `portfolio-static-preview` with static `dist/` files and `shadcn-reference-comparison` with reference screenshots. These are downloadable build artifacts, not a deployment.
+
+See `docs/release-checklist.md` before publishing.

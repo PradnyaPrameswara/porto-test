@@ -149,6 +149,7 @@ a:focus-visible {
 .portfolio-intro p + p { margin-top: 12px; }
 .portfolio-muted { color: var(--portfolio-muted); }
 .portfolio-section { margin-top: 52px; }
+.portfolio-section--contact { margin-top: 64px; }
 .portfolio-section-heading {
   margin-bottom: 12px;
   font-size: 16px;
@@ -207,6 +208,8 @@ a:focus-visible {
   }
   .portfolio-intro { margin-top: 52px; }
   .portfolio-section { margin-top: 45px; }
+  .portfolio-section--contact { margin-top: 54px; }
+  .portfolio-section--work { margin-top: 25px; }
   .portfolio-project + .portfolio-project { margin-top: 30px; }
   .portfolio-footer { margin-top: 64px; }
 }
