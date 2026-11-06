@@ -8,11 +8,13 @@ test("GitHub Pages preview prefixes internal navigation", async () => {
   const html = await load("index.html")
   assert.ok(html.includes('href="/porto-test/"'))
   assert.ok(html.includes('href="/porto-test/favicon.svg"'))
+  assert.ok(html.includes('href="https://pradnyaprameswara.github.io/porto-test/"'))
   for (const slug of ["widhi-asih-bali-export", "wedding-website", "invoiceaura"]) {
     assert.ok(html.includes(`href="/porto-test/projects/${slug}/"`))
     const detail = await load(`projects/${slug}/index.html`)
     assert.ok(detail.includes('href="/porto-test/#work-heading"'))
     assert.ok(detail.includes('href="/porto-test/favicon.svg"'))
+    assert.ok(detail.includes(`href="https://pradnyaprameswara.github.io/porto-test/projects/${slug}/"`))
   }
   assert.ok(!html.includes('href="/projects/'))
   assert.ok(!html.includes('href="/favicon.svg"'))
@@ -21,4 +23,5 @@ test("GitHub Pages preview prefixes internal navigation", async () => {
 test("404 link returns to the Pages project root", async () => {
   const html = await load("404.html")
   assert.ok(html.includes('href="/porto-test/"'))
+  assert.ok(html.includes('content="noindex, nofollow"'))
 })

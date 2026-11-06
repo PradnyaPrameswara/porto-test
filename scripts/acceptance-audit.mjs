@@ -56,8 +56,14 @@ try {
       href: document.activeElement?.getAttribute("href"),
       outline: document.activeElement ? getComputedStyle(document.activeElement).outlineStyle : null,
     }))
-    assert.equal(focused.href, "/")
+    assert.equal(focused.href, "#main-content")
     assert.equal(focused.outline, "solid")
+    await page.keyboard.press("Tab")
+    assert.equal(
+      await page.evaluate(() => document.activeElement?.getAttribute("href")),
+      "/",
+      "The home link should follow the accessible skip link"
+    )
 
     const beforeOverflow = await page.evaluate(() => document.documentElement.scrollWidth)
     assert.ok(beforeOverflow <= width + 1)
