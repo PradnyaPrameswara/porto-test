@@ -15,7 +15,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:site": "node --test tests/site.test.mjs"
+    "test:site": "node --test tests/site.test.mjs",
+    "test:visual": "node scripts/visual-audit.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.0",
@@ -46,6 +47,7 @@
     "prettier-plugin-astro": "^1.1.2",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "~6.0.2",
-    "typescript-eslint": "^8.0.0"
+    "typescript-eslint": "^8.0.0",
+    "playwright": "^1.56.1"
   }
 }

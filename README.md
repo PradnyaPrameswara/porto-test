@@ -20,6 +20,8 @@ pnpm lint
 pnpm typecheck
 pnpm build
 pnpm test:site
+pnpm exec playwright install chromium
+pnpm test:visual
 ```
 
 The smoke tests read the statically built `dist/` output, so run `pnpm build` before `pnpm test:site`.
