@@ -27,6 +27,8 @@ import { experience, expertise, projects } from "@/data/portfolio"
           <dd class="text-right font-medium tabular-nums">03</dd>
           <dt class="portfolio-muted">professional / teaching roles</dt>
           <dd class="text-right font-medium tabular-nums">02</dd>
+          <dt class="portfolio-muted">focus areas</dt>
+          <dd class="text-right font-medium tabular-nums">{String(expertise.length).padStart(2, "0")}</dd>
           <dt class="portfolio-muted">graduated</dt>
           <dd class="text-right font-medium tabular-nums">2026</dd>
           <dt class="portfolio-muted">based in</dt>
@@ -34,7 +36,7 @@ import { experience, expertise, projects } from "@/data/portfolio"
         </dl>
       </section>
 
-      <section class="portfolio-section" aria-labelledby="contact-heading">
+      <section class="portfolio-section portfolio-section--contact" aria-labelledby="contact-heading">
         <h2 id="contact-heading" class="portfolio-section-heading">pradnya/contact</h2>
         <a class="portfolio-plain-button" href="mailto:agungpradnya7@gmail.com?subject=Portfolio%20inquiry">
           Get in touch
@@ -44,7 +46,7 @@ import { experience, expertise, projects } from "@/data/portfolio"
         </p>
       </section>
 
-      <section class="portfolio-section" aria-labelledby="work-heading">
+      <section class="portfolio-section portfolio-section--work" aria-labelledby="work-heading">
         <h2 id="work-heading" class="sr-only">Selected projects</h2>
         <div>
           {projects.map((project) => (

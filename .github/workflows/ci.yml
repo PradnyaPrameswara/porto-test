@@ -51,3 +51,12 @@ jobs:
           name: shadcn-reference-comparison
           path: reference-audit/
           if-no-files-found: ignore
+      - name: Portfolio browser acceptance checks
+        run: pnpm test:acceptance
+      - name: Upload previewable static build
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-static-preview
+          path: dist/
+          if-no-files-found: error
