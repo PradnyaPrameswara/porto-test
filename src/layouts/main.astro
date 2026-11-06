@@ -6,11 +6,17 @@ import { sitePath } from "@/lib/site-paths"
 interface Props {
   title?: string
   description?: string
+  indexable?: boolean
 }
 const {
   title = "Pradnya Prameswara — Fullstack Web Developer",
   description = "Pradnya Prameswara is a fullstack web developer based in Gianyar, Bali, building responsive and maintainable web applications.",
+  indexable = true,
 } = Astro.props
+
+const canonical = indexable && Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).href
+  : undefined
 ---
 
 <!doctype html>
@@ -19,13 +25,23 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#fefefe" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/svg+xml" href={sitePath("/favicon.svg")} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={indexable ? "index, follow" : "noindex, nofollow"} />
+    {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <title>{title}</title>
   </head>
-  <body><slot /></body>
+  <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:bg-white focus:px-3 focus:py-2 focus:text-black">
+      Skip to content
+    </a>
+    <slot />
+  </body>
 </html>
