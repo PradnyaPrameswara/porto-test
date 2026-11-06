@@ -60,3 +60,14 @@ jobs:
           name: portfolio-static-preview
           path: dist/
           if-no-files-found: error
+      - name: Build GitHub Pages path-aware preview
+        run: DEPLOY_TARGET=github-pages pnpm build
+      - name: Verify GitHub Pages preview navigation
+        run: pnpm test:pages
+      - name: Upload GitHub Pages-ready preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-pages-preview
+          path: dist/
+          if-no-files-found: error

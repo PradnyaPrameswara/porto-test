@@ -2,6 +2,7 @@
 import Layout from "@/layouts/main.astro"
 import SiteHeader from "@/components/site-header.astro"
 import SiteFooter from "@/components/site-footer.astro"
+import { sitePath } from "@/lib/site-paths"
 ---
 
 <Layout title="Page not found — Pradnya Prameswara" description="This page does not exist. Return to Pradnya Prameswara's portfolio.">
@@ -10,7 +11,7 @@ import SiteFooter from "@/components/site-footer.astro"
     <main class="mt-24">
       <h1 class="text-[32px] font-semibold tracking-[-.05em]">404 / Page not found</h1>
       <p class="mt-4 portfolio-prose">The page you're looking for isn't here.</p>
-      <a class="mt-8 inline-block text-[13px] underline underline-offset-4" href="/">← Back to portfolio</a>
+      <a class="mt-8 inline-block text-[13px] underline underline-offset-4" href={sitePath("/")}>← Back to portfolio</a>
     </main>
     <SiteFooter />
   </div>

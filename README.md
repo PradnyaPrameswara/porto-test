@@ -53,3 +53,7 @@ The reference is a separate creator's website; use it to inspect layout and typo
 `pnpm test:acceptance` runs browser checks against a locally served production build. CI uploads `portfolio-static-preview` with static `dist/` files and `shadcn-reference-comparison` with reference screenshots. These are downloadable build artifacts, not a deployment.
 
 See `docs/release-checklist.md` before publishing.
+
+## GitHub Pages compatibility
+
+CI also builds a separate path-aware /porto-test/ preview without publishing it. See docs/github-pages-preview.md.
