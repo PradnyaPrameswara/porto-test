@@ -30,3 +30,14 @@ jobs:
         run: pnpm build
       - name: Generated site smoke tests
         run: pnpm test:site
+      - name: Install Chromium for visual checks
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Responsive browser audit and screenshots
+        run: pnpm test:visual
+      - name: Upload visual audit screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-visual-audit
+          path: visual-audit/
+          if-no-files-found: ignore
