@@ -57,3 +57,10 @@ See `docs/release-checklist.md` before publishing.
 ## GitHub Pages compatibility
 
 CI also builds a separate path-aware /porto-test/ preview without publishing it. See docs/github-pages-preview.md.
+
+## Optional manual GitHub Pages publication
+
+A GitHub Actions workflow is prepared but never auto-deploys on a merge.
+The repository owner must enable GitHub Actions as the Pages source and
+manually run the publish workflow on `main` after reviewing the site.
+See `docs/github-pages-preview.md`. No custom domain is configured.
