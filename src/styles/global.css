@@ -101,7 +101,7 @@ body {
   margin: 0;
   background: var(--portfolio-page);
   color: var(--portfolio-ink);
-  font-family: "Schibsted Grotesk", Arial, sans-serif;
+  font-family: "Schibsted Grotesk Variable", Arial, sans-serif;
   font-size: 13px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
