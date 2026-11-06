@@ -1,0 +1,37 @@
+name: Bootstrap lockfile (temporary)
+on:
+  push:
+    branches:
+      - fix/restore-font-and-lockfile
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/fix/restore-font-and-lockfile'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.14.0
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.23.4"
+      - name: Resolve and save lockfile
+        run: pnpm install --lockfile-only --no-frozen-lockfile
+      - name: Commit generated lockfile to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pnpm-lock.yaml
+          if git diff --cached --quiet; then
+            echo "Lockfile already up to date"
+          else
+            git commit -m "chore: lock pnpm dependencies"
+            git push origin HEAD:refs/heads/fix/restore-font-and-lockfile
+          fi

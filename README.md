@@ -37,3 +37,7 @@ Company project source is not published here. The portfolio contains no premium 
 Develop future changes in focused pull requests against the appropriate base. Stacked PRs must be merged in dependency order, then retargeted to `main`.
 
 The repository does not yet include a committed pnpm lockfile. Local and CI dependency resolution may therefore change across installs.
+
+## Typography
+
+Schibsted Grotesk Variable is self-hosted through Fontsource (OFL-1.1) so screenshots and deployments no longer depend on Google Fonts availability. Fontsource assets are bundled by Vite.

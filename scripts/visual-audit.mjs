@@ -44,6 +44,11 @@ try {
     })
     await page.goto(origin, { waitUntil: "domcontentloaded" })
     await page.locator(".portfolio-shell").waitFor()
+    const loadedFont = await page.evaluate(async () => {
+      await document.fonts.load('400 13px "Schibsted Grotesk Variable"')
+      return document.fonts.check('400 13px "Schibsted Grotesk Variable"')
+    })
+    assert.ok(loadedFont, `Schibsted Grotesk font missing at ${width}px`)
 
     assert.equal(await page.locator("main h1").count(), 1)
     assert.equal(await page.locator(".portfolio-project").count(), 3)
@@ -85,7 +90,7 @@ try {
       Math.abs(metrics.shellLeft - expectedLeft) <= 3,
       `Shell left position mismatch at ${width}px: got ${metrics.shellLeft}, expected ${expectedLeft}`
     )
-    assert.match(metrics.bodyFont, /Schibsted Grotesk/)
+    assert.match(metrics.bodyFont, /Schibsted Grotesk Variable/)
     measurements.push(metrics)
 
     if ([390, 768, 1440].includes(width)) {
