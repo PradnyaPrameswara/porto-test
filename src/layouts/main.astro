@@ -5,10 +5,9 @@ interface Props {
   title?: string
   description?: string
 }
-
 const {
-  title = "porto-test",
-  description = "Personal portfolio — foundation setup",
+  title = "Pradnya Prameswara — Fullstack Web Developer",
+  description = "Pradnya Prameswara is a fullstack web developer based in Gianyar, Bali, building responsive and maintainable web applications.",
 } = Astro.props
 ---
 
@@ -18,10 +17,14 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#fefefe" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
-  </body>
+  <body><slot /></body>
 </html>
