@@ -85,16 +85,15 @@
  * white space. All content and interaction patterns are original to this site.
  */
 :root {
-  --portfolio-ink: #202020;
-  --portfolio-muted: #696969;
+  --portfolio-ink: #09090b;
+  --portfolio-muted: #71717a;
   --portfolio-soft: #858585;
   --portfolio-rule: #e8e8e8;
-  --portfolio-page: #fefefe;
-  --portfolio-gutter: clamp(24px, 6.55vw, 96px);
+  --portfolio-page: #ffffff;
+  --portfolio-gutter: 96px;
 }
 html {
   scroll-behavior: smooth;
-  scrollbar-gutter: stable;
 }
 body {
   min-width: 0;
@@ -102,8 +101,8 @@ body {
   background: var(--portfolio-page);
   color: var(--portfolio-ink);
   font-family: "Schibsted Grotesk Variable", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 20px;
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-underline-offset: 2px; }
@@ -125,8 +124,8 @@ a:focus-visible {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 7px;
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 20px;
   letter-spacing: -0.014em;
 }
 .portfolio-header nav { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
@@ -141,9 +140,9 @@ a:focus-visible {
 .portfolio-header .brand { font-weight: 500; }
 .portfolio-header .separator { color: #666; }
 .portfolio-intro {
-  margin-top: 40px;
+  margin-top: 52px;
   font-size: 14px;
-  line-height: 1.72;
+  line-height: 24px;
   letter-spacing: -0.012em;
 }
 .portfolio-intro strong { font-weight: 500; }
@@ -152,18 +151,19 @@ a:focus-visible {
 .portfolio-section { margin-top: 52px; }
 .portfolio-section-heading {
   margin-bottom: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.55;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
   letter-spacing: -0.018em;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
-.portfolio-prose { color: #555; font-size: 13px; line-height: 1.72; }
+.portfolio-prose { color: #3f3f46; font-size: 14px; line-height: 20px; }
 .portfolio-project + .portfolio-project { margin-top: 36px; }
 .portfolio-project a {
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: #858585;
@@ -202,17 +202,17 @@ a:focus-visible {
     max-width: none;
     margin-left: 24px;
     margin-right: 24px;
-    padding-top: 50px;
+    padding-top: 22px;
     padding-bottom: 72px;
   }
-  .portfolio-intro { margin-top: 34px; }
+  .portfolio-intro { margin-top: 52px; }
   .portfolio-section { margin-top: 45px; }
   .portfolio-project + .portfolio-project { margin-top: 30px; }
   .portfolio-footer { margin-top: 64px; }
 }
 @media (max-width: 340px) {
   .portfolio-shell { margin-inline: 18px; }
-  .portfolio-header { font-size: 12px; }
+  .portfolio-header { font-size: 13px; }
   .portfolio-header nav { gap: 5px; }
 }
 @media (prefers-reduced-motion: reduce) {

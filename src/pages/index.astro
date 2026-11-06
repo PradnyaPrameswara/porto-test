@@ -14,19 +14,15 @@ import { experience, expertise, projects } from "@/data/portfolio"
 
       <div class="portfolio-intro">
         <p>
-          I'm <strong>Pradnya Prameswara</strong>, a fullstack web developer
-          based in Bali. I build responsive, maintainable applications across
-          frontend, backend, APIs, and databases.
-        </p>
-        <p class="portfolio-muted">
-          Currently a Web Developer at Widhi Asih Bali Export.
-          Informatics Education graduate from Universitas Pendidikan Ganesha.
+          I'm <strong>Pradnya Prameswara</strong>, a fullstack web developer at
+          Widhi Asih Bali Export. I build responsive web applications and
+          studied Informatics Education at Universitas Pendidikan Ganesha.
         </p>
       </div>
 
       <section class="portfolio-section" aria-labelledby="numbers-heading">
         <h2 id="numbers-heading" class="portfolio-section-heading">pradnya/numbers</h2>
-        <dl class="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-5 gap-y-1 text-[13px] leading-[1.5]">
+        <dl class="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-5 gap-y-0 text-[14px] leading-[20px]">
           <dt class="portfolio-muted">selected projects</dt>
           <dd class="text-right font-medium tabular-nums">03</dd>
           <dt class="portfolio-muted">professional / teaching roles</dt>
@@ -43,7 +39,7 @@ import { experience, expertise, projects } from "@/data/portfolio"
         <a class="portfolio-plain-button" href="mailto:agungpradnya7@gmail.com?subject=Portfolio%20inquiry">
           Get in touch
         </a>
-        <p class="mt-2 text-[12px] leading-[1.5] portfolio-muted">
+        <p class="mt-2 text-[14px] leading-[20px] portfolio-muted">
           Open to fullstack, frontend, and backend opportunities.
         </p>
       </section>
@@ -53,13 +49,12 @@ import { experience, expertise, projects } from "@/data/portfolio"
         <div>
           {projects.map((project) => (
             <article class="portfolio-project">
-              <h3 class="text-[13px] leading-[1.5]">
+              <h3 class="text-[16px] leading-[24px]">
                 <a href={`/projects/${project.slug}/`} aria-label={`Read about ${project.name}`}>
                   pradnya/{project.name.toLowerCase().replaceAll(" ", "-")}
                 </a>
               </h3>
               <p class="portfolio-prose">{project.description}</p>
-              <p class="text-[11px] leading-[1.55] portfolio-muted">{project.role} · {project.status}</p>
             </article>
           ))}
         </div>

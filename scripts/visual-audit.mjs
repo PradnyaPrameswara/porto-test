@@ -85,12 +85,13 @@ try {
       `Reading column too wide at ${width}px: ${metrics.shellWidth}`
     )
     const expectedLeft =
-      width <= 340 ? 18 : width <= 600 ? 24 : Math.min(96, Math.max(24, width * 0.0655))
+      width <= 340 ? 18 : width <= 600 ? 24 : 96
     assert.ok(
       Math.abs(metrics.shellLeft - expectedLeft) <= 3,
       `Shell left position mismatch at ${width}px: got ${metrics.shellLeft}, expected ${expectedLeft}`
     )
     assert.match(metrics.bodyFont, /Schibsted Grotesk Variable/)
+    assert.equal(metrics.bodyFontSize, "14px")
     measurements.push(metrics)
 
     if ([390, 768, 1440].includes(width)) {

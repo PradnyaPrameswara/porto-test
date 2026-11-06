@@ -30,3 +30,20 @@ This is a reference-led adjustment based on an archived screenshot, not a pixel-
 - Use a native `mailto:` contact CTA in the area where the reference has a newsletter. The project has no mailing-list backend, so no fake signup is shown.
 - Project names are underlined, description-first, vertically separated without card backgrounds or table dividers.
 - Omit client/sponsor logos and interaction metrics that cannot be verified.
+
+## 2026-11-06 measured side-by-side browser audit
+
+Evidence: [GitHub Actions run #42181955480](https://github.com/PradnyaPrameswara/porto-test/actions/runs/42181955480), artifact `shadcn-reference-comparison`. Both pages captured at 390, 768 and 1440 CSS px, same Chromium settings. Measurements **before** PR #11:
+
+| Measure | shadcn.com | portfolio | Correction |
+| --- | --- | --- | --- |
+| Content left at 1440px | 96px | 94px | 96px gutter |
+| Content left at 768px | 96px | 50px | 96px gutter |
+| Content left at 390px | 24px | 24px | Retain |
+| Body font size | 14px | 13px | 14px |
+| Section heading | 16px | 13px | 16px |
+| Body background | #ffffff | #fefefe | White |
+| Numbers heading Y at 1440px | 296px | 342px | Shorten intro and align rhythm |
+| Numbers heading Y at 390px | 224px | 331px | Reduce mobile top padding and intro length |
+
+The intro is intentionally shortened without fabricating facts; employment and education details remain in their own sections. The shadcn.com newsletter, sponsor art, and product data are not copied. Further results must be checked on the next CI screenshots; these values do not represent post-change measurements.
