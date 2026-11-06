@@ -8,48 +8,58 @@ import { experience, expertise, projects } from "@/data/portfolio"
 <Layout>
   <div class="portfolio-shell">
     <SiteHeader />
+
     <main id="main-content">
       <h1 class="sr-only">Anak Agung Gede Pradnya Prameswara — Fullstack Web Developer</h1>
+
       <div class="portfolio-intro">
         <p>
           I'm <strong>Pradnya Prameswara</strong>, a fullstack web developer
-          in Gianyar, Bali. I build responsive, maintainable applications
-          across frontend, backend, APIs, and databases.
+          based in Bali. I build responsive, maintainable applications across
+          frontend, backend, APIs, and databases.
         </p>
         <p class="portfolio-muted">
-          I'm a Web Developer at <strong class="font-medium text-[#303030]">Widhi Asih Bali Export</strong>
-          and a graduate in Informatics Education from
-          Universitas Pendidikan Ganesha.
+          Currently a Web Developer at Widhi Asih Bali Export.
+          Informatics Education graduate from Universitas Pendidikan Ganesha.
         </p>
       </div>
 
       <section class="portfolio-section" aria-labelledby="numbers-heading">
         <h2 id="numbers-heading" class="portfolio-section-heading">pradnya/numbers</h2>
-        <dl class="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-5 gap-y-[15px] text-[13px] leading-[1.6]">
-          <dt class="portfolio-muted">selected projects</dt><dd class="text-right font-semibold tabular-nums">03</dd>
-          <dt class="portfolio-muted">professional / teaching roles</dt><dd class="text-right font-semibold tabular-nums">02</dd>
-          <dt class="portfolio-muted">informatics education · graduation</dt><dd class="text-right font-semibold tabular-nums">2026</dd>
-          <dt class="portfolio-muted">based in</dt><dd class="text-right font-medium">Gianyar, Bali</dd>
+        <dl class="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-5 gap-y-1 text-[13px] leading-[1.5]">
+          <dt class="portfolio-muted">selected projects</dt>
+          <dd class="text-right font-medium tabular-nums">03</dd>
+          <dt class="portfolio-muted">professional / teaching roles</dt>
+          <dd class="text-right font-medium tabular-nums">02</dd>
+          <dt class="portfolio-muted">graduated</dt>
+          <dd class="text-right font-medium tabular-nums">2026</dd>
+          <dt class="portfolio-muted">based in</dt>
+          <dd class="text-right">Gianyar, Bali</dd>
         </dl>
       </section>
 
+      <section class="portfolio-section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="portfolio-section-heading">pradnya/contact</h2>
+        <a class="portfolio-plain-button" href="mailto:agungpradnya7@gmail.com?subject=Portfolio%20inquiry">
+          Get in touch
+        </a>
+        <p class="mt-2 text-[12px] leading-[1.5] portfolio-muted">
+          Open to fullstack, frontend, and backend opportunities.
+        </p>
+      </section>
+
       <section class="portfolio-section" aria-labelledby="work-heading">
-        <h2 id="work-heading" class="portfolio-section-heading">pradnya/projects</h2>
-        <div class="divide-y divide-[#ebebeb]">
-          {projects.map((project, index) => (
-            <article class="py-5 first:pt-0">
-              <div class="mb-2 flex items-baseline justify-between gap-4 text-[11px] text-[#777]">
-                <span>0{index + 1} / {project.category}</span>
-                <span class="text-right">{project.role}</span>
-              </div>
-              <h3 class="text-[16px] font-semibold tracking-[-.035em]">
-                <a class="underline decoration-transparent underline-offset-[3px] transition-colors hover:decoration-current focus-visible:decoration-current"
-                   href={`/projects/${project.slug}/`} aria-label={`Read about ${project.name}`}>
-                  {project.name} <span aria-hidden="true">↗</span>
+        <h2 id="work-heading" class="sr-only">Selected projects</h2>
+        <div>
+          {projects.map((project) => (
+            <article class="portfolio-project">
+              <h3 class="text-[13px] leading-[1.5]">
+                <a href={`/projects/${project.slug}/`} aria-label={`Read about ${project.name}`}>
+                  pradnya/{project.name.toLowerCase().replaceAll(" ", "-")}
                 </a>
               </h3>
-              <p class="mt-1 text-[13px] leading-[1.7] text-[#626262]">{project.description}</p>
-              <p class="mt-2 text-[11px] leading-[1.7] text-[#868686]">{project.technologies.join(" · ")}</p>
+              <p class="portfolio-prose">{project.description}</p>
+              <p class="text-[11px] leading-[1.55] portfolio-muted">{project.role} · {project.status}</p>
             </article>
           ))}
         </div>
@@ -57,26 +67,23 @@ import { experience, expertise, projects } from "@/data/portfolio"
 
       <section class="portfolio-section" aria-labelledby="experience-heading">
         <h2 id="experience-heading" class="portfolio-section-heading">pradnya/experience</h2>
-        <div class="space-y-6">
+        <dl class="space-y-4 text-[13px] leading-[1.65]">
           {experience.map((entry) => (
-            <div class="grid gap-1 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-8">
-              <div>
-                <h3 class="text-[14px] font-medium">{entry.role}</h3>
-                <p class="mt-1 text-[13px] text-[#626262]">{entry.company} · {entry.location}</p>
-              </div>
-              <p class="text-[12px] text-[#888] sm:text-right">{entry.period}</p>
+            <div>
+              <dt class="font-medium">{entry.role}</dt>
+              <dd class="portfolio-muted">{entry.company} · {entry.period}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
 
       <section class="portfolio-section" aria-labelledby="stack-heading">
         <h2 id="stack-heading" class="portfolio-section-heading">pradnya/stack</h2>
-        <dl class="space-y-4 text-[13px] leading-[1.75]">
+        <dl class="space-y-3 text-[13px] leading-[1.65]">
           {expertise.map((group) => (
-            <div class="grid gap-1 sm:grid-cols-[135px_minmax(0,1fr)] sm:gap-x-4">
-              <dt class="portfolio-muted">{group.name}</dt>
-              <dd>{group.items.join(" · ")}</dd>
+            <div>
+              <dt class="font-medium">{group.name}</dt>
+              <dd class="portfolio-muted">{group.items.join(" · ")}</dd>
             </div>
           ))}
         </dl>
@@ -84,25 +91,15 @@ import { experience, expertise, projects } from "@/data/portfolio"
 
       <section class="portfolio-section" aria-labelledby="education-heading">
         <h2 id="education-heading" class="portfolio-section-heading">pradnya/education</h2>
-        <h3 class="text-[14px] font-medium">Universitas Pendidikan Ganesha</h3>
-        <p class="mt-1 text-[13px] text-[#626262]">Bachelor's degree · Informatics Education · 2022–2026</p>
-        <p class="mt-3 portfolio-prose">
-          Research: Development of a Large Language Model-Based Diagnostic
-          Assessment System for Detecting Students' Initial Abilities.
-        </p>
-      </section>
-
-      <section class="portfolio-section" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" class="portfolio-section-heading">pradnya/contact</h2>
-        <p class="portfolio-prose">
-          Open to full-time opportunities in fullstack, frontend, or backend development.
-          <a class="font-medium text-[#242424] underline decoration-[#999] hover:decoration-[#242424]"
-             href="mailto:agungpradnya7@gmail.com">Get in touch via email</a>,
-          or connect on <a class="font-medium text-[#242424] underline decoration-[#999] hover:decoration-[#242424]"
-             href="https://www.linkedin.com/in/pradnyaprameswara/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+        <p class="text-[13px] font-medium">Universitas Pendidikan Ganesha</p>
+        <p class="portfolio-muted text-[13px]">Informatics Education · 2022–2026</p>
+        <p class="mt-2 portfolio-prose">
+          Research on an LLM-based diagnostic assessment system for detecting
+          students' initial abilities.
         </p>
       </section>
     </main>
+
     <SiteFooter />
   </div>
 </Layout>

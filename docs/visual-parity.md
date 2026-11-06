@@ -23,3 +23,10 @@ Implementation: https://github.com/PradnyaPrameswara/porto-test
 ## Evidence limitation
 
 This is a reference-led adjustment based on an archived screenshot, not a pixel-difference measurement from two live browser screenshots. A final browser-based comparison remains necessary before claiming visual parity.
+
+## Homepage content reflow (follow-up PR)
+
+- Keep the shadcn.com sequence: introduction → compact metrics → narrow call to action → linked portfolio entries, then supplementary biographical details.
+- Use a native `mailto:` contact CTA in the area where the reference has a newsletter. The project has no mailing-list backend, so no fake signup is shown.
+- Project names are underlined, description-first, vertically separated without card backgrounds or table dividers.
+- Omit client/sponsor logos and interaction metrics that cannot be verified.

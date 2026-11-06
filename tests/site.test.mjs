@@ -10,7 +10,10 @@ test("homepage publishes the profile and real project links", async () => {
   for (const required of [
     "Pradnya Prameswara",
     "pradnya/numbers",
-    "pradnya/projects",
+    "pradnya/widhi-asih-bali-export",
+    "pradnya/wedding-website",
+    "pradnya/invoiceaura",
+    "pradnya/contact",
     "pradnya/experience",
     "pradnya/stack",
     "Universitas Pendidikan Ganesha",
